@@ -47,22 +47,27 @@ export const changeInstalledStatusOfApp = async (id: string) => {
 }
 
 
-export const getUrlByAppName = (name: string) => {
-    prisma.yApp.findFirst({
-        where:{
-            name:{
-                contains: name,
-                mode: "insensitive"
+export const getUrlByAppName = async (name: string): Promise<{url:string}> => {
+    try {
+        const url =  await prisma.yApp.findFirst({
+            where:{
+                name:{
+                    contains: name,
+                    mode: "insensitive"
+                }
+            },
+            select:{
+                url: true
             }
-        },
-        select:{
-            url: true
-        }
-    })
-        .then(url => {
+        })
+
+        if(!url) {
+            throw new Error("No app matching name")
+        } else {
             return url
-        })
-        .catch(error => {
-            throw new Error(error)
-        })
+        }
+    } catch (error) {
+        throw Error("Error from servor")
+    }
+
 }
