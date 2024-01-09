@@ -1,5 +1,6 @@
 import express from "express"
 import prisma from "../service/prisma";
+import { getUrlByAppName } from "../provider/yApp.provider";
 
 const router = express.Router();
 const cheerio = require("cheerio");
@@ -28,8 +29,9 @@ async function getAppInfo(url : string) {
 
 router.get("/", async (req, res) => {
     const appName = req.query.appName;
-    const url = getUrlByAppName(appName);
+    const url = await getUrlByAppName(appName);
     const info = await getAppInfo(url);
+    return info;
 });
 
 module.exports = router
