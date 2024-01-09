@@ -1,6 +1,6 @@
 import Express from "express";
 import dotenv from "dotenv";
-import router from "./routes/router";
+import routerYApp from "./routes/yapp";
 
 dotenv.config();
 
@@ -10,6 +10,6 @@ const PORT = process.env.PORT;
 
 app.use(Express.json());
 
-app.use(router);
+app.use(routerYApp);
 
 app.listen(PORT, () => console.log(`Lancement du serveur sur le port ${PORT}`));
