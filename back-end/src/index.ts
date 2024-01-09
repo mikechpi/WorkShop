@@ -1,6 +1,5 @@
 import Express from "express";
 import dotenv from "dotenv";
-// import routerYApp from "./routes/yapp";
 
 dotenv.config();
 
