@@ -1,5 +1,6 @@
 import Express from "express";
 import dotenv from "dotenv";
+import yappRouter from "./routes/yApp.router";
 
 dotenv.config();
 

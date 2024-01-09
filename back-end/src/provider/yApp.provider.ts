@@ -45,3 +45,18 @@ export const changeInstalledStatusOfApp = async (id: string) => {
             throw new Error(error)
         } )
 }
+
+
+export const getUrlByAppName = (name: string) => {
+    prisma.yApp.findFirst({
+        where:{
+            name:{
+                contains: name,
+                mode: "insensitive"
+            }
+        },
+        select:{
+            url: true
+        }
+    })
+}
