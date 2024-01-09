@@ -59,4 +59,10 @@ export const getUrlByAppName = (name: string) => {
             url: true
         }
     })
+        .then(url => {
+            return url
+        })
+        .catch(error => {
+            throw new Error(error)
+        })
 }
