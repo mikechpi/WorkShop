@@ -1,30 +1,30 @@
-import { YApp } from "@prisma/client";
-import prisma from "../service/prisma";
-
+import fs from "fs"
+const appDataJson = require("../data/yApp.json")
+fs
 export const getAllApp = async () => {
-    try {
-        prisma.yApp.findMany()
-    } catch{
-        throw new Error("Internal server error")
-    }
 }
 
 export const getOneApp = async (id: string) => {
-    try {
+   /*  try {
         const yApp = await prisma.yApp.findUnique({
             where:{
                 id
             }
         })
 
-        return yApp
+        if(!yApp) {
+            throw new Error("There is no app matching id")
+        } else {
+            return yApp
+
+        }
     } catch {
         throw new Error("Internal server error")
-    }
+    } */
 }
 
 export const changeInstalledStatusOfApp = async (id: string) => {
-    try {
+    /* try {
         const yApp = await prisma.yApp.findUnique({
             where:{
                 id
@@ -45,11 +45,11 @@ export const changeInstalledStatusOfApp = async (id: string) => {
         }
     } catch (error) {
         throw new Error("Internal server error")
-    }
+    } */
 }
 
 export const getUrlByAppName = (name: string) => {
-    prisma.yApp.findFirst({
+    /* prisma.yApp.findFirst({
         where:{
             name:{
                 contains: name,
@@ -65,5 +65,5 @@ export const getUrlByAppName = (name: string) => {
         })
         .catch(error => {
             throw new Error(error)
-        })
+        }) */
 }
