@@ -1,8 +1,8 @@
 import React from 'react'
 import SectionComponent from '../SectionComponent'
-import BundleAppsInfos from './BundleAppsInfos'
 import { BundleAppsData } from '@/app/constants/BundleAppsInfos'
 import { Button } from '@/components/ui/button'
+import BundleAppsDisplay from './BundleApps/BundleAppsDisplay'
 
 const ChooseApps = () => {
   return (
@@ -15,7 +15,7 @@ const ChooseApps = () => {
           BundleAppsData.map((infos, index) => {
               const { title, apps } = infos;
               return (
-                  <BundleAppsInfos key={index} title={title} apps={apps} />
+                  <BundleAppsDisplay key={index} title={title} apps={apps} />
               )
           })
         }
