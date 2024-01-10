@@ -9,6 +9,11 @@ export const getOneApp = async (id: string) => {
         const yApp = await prisma.yApp.findUnique({
             where:{
                 id
+            },
+            select: {
+                name: true,
+                logoUrl: true,
+                isInstalled: true
             }
         })
 
@@ -55,9 +60,11 @@ export const getUrlByAppName = (name: string) => {
                 contains: name,
                 mode: "insensitive"
             }
-        },
-        select:{
-            url: true
+        })
+        if (!url) {
+            throw new Error("No URL found")
+        } else {
+            return url;
         }
     })
         .then(url => {
