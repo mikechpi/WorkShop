@@ -1,6 +1,5 @@
-import fs from "fs"
 const appDataJson = require("../data/yApp.json")
-fs
+
 
 interface AppInterface {
     name : string,
@@ -25,14 +24,13 @@ export const getAllApp = async () => {
 
 export const getOneApp = async (name: string) => {
     try {
-        const apps = appDataJson.yApps.find((item: AppInterface) => {if (name == item.name) return {
-                name: item.name,
-                logoUrl: item.logoUrl,
-                categorie: item.categorie
-            }
-        });
-        console.log(apps)
-        return apps;
+        const app = appDataJson.yApps.find((item: AppInterface) => name === item.name);
+
+        return {
+            name: app.name,
+            logoUrl: app.logoUrl,
+            categorie: app.categorie
+       }
     } catch {
         throw new Error()
     }
