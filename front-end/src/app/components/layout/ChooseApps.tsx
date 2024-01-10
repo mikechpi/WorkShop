@@ -1,10 +1,15 @@
+"use client";
 import React from 'react'
 import SectionComponent from '../SectionComponent'
 import { BundleAppsData } from '@/app/constants/BundleAppsInfos'
 import { Button } from '@/components/ui/button'
 import BundleAppsDisplay from './bundleapps/BundleAppsDisplay'
+import getApps from '@/app/actions/getApps'
 
 const ChooseApps = () => {
+  const test = async () => await getApps();
+  test();
+  
   return (
     <SectionComponent>
         <div className='flex flex-col space-y-4 justify-center items-center'>
