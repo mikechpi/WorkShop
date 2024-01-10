@@ -12,12 +12,12 @@ const ChooseApps = () => {
           <p className='text-center text-gray-600 lg:max-w-4xl'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec aliquet massa, sed dapibus mauris. Donec aliquet, nibh sed ultrices interdum, nunc nibh ultricies dolor, quis aliquam nunc nisl quis nunc. </p>
         </div>
         {
-            BundleAppsData.map((infos, index) => {
-                const { title, apps } = infos;
-                return (
-                    <BundleAppsInfos key={index} title={title} apps={apps} />
-                )
-            })
+          BundleAppsData.map((infos, index) => {
+              const { title, apps } = infos;
+              return (
+                  <BundleAppsInfos key={index} title={title} apps={apps} />
+              )
+          })
 
         }
         <div className="text-center my-6">
