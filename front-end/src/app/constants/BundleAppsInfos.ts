@@ -5,12 +5,15 @@ export const BundleAppsData = [
         apps: [
           {
             name: "Scrumblr",
+            image: "/img/scrumblr.png",
           },
           {
             name: "Tyto",
+            image: "/img/scrumblr.png",
           },
           {
             name: "YesWiki",
+            image: "/img/scrumblr.png",
           },
         ],
       },
@@ -20,12 +23,15 @@ export const BundleAppsData = [
         apps: [
             {
                 name: "Zotero",
+                image: "/img/scrumblr.png",
             },
             {
                 name: "Calibreweb",
+                image: "/img/scrumblr.png",
             },
             {
                 name: "YesWiki",
+                image: "/img/scrumblr.png",
             },
         ]
     },
@@ -35,15 +41,19 @@ export const BundleAppsData = [
         apps: [
             {
                 name: "Etherpad",
+                image: "/img/scrumblr.png",
             },
             {
                 name: "Libreto",
+                image: "/img/scrumblr.png",
             },
             {
                 name: "Hedgedoc",
+                image: "/img/scrumblr.png",
             },
             {
                 name: "Overleaf",
+                image: "/img/scrumblr.png",
             }
         ]
     },
@@ -53,6 +63,7 @@ export const BundleAppsData = [
         apps: [
             {
                 name: "YesWiki",
+                image: "/img/scrumblr.png",
             },
         ]
     },
