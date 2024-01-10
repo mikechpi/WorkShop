@@ -14,7 +14,7 @@ const BundleAppsList = ({app}: BundleAppsListProps) => {
     <div className="px-4 py-3 rounded-lg shadow transition-all border-slate-300 duration-300 hover:bg-gray-100">
       <div className="flex justify-between gap-4">
         <div className="shrink-0">
-          <Image src={app.image} className="h-12 w-12 rounded-lg object-cover shadow-sm" width={48} height={48} alt="illustration" />
+          
         </div>
         <div className='w-full'>
           <Info className="text-[#3B82F6] h-5 w-5 float-right cursor-pointer" size={24} />
