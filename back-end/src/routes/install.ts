@@ -1,10 +1,6 @@
 import express from "express"
 import { YApp } from "@prisma/client";
-
 const { exec } = require('node:child_process')
-
-// run the `ls` command using exec
-
 const router = express.Router();
 
 router.post("/", (req, res) => {
@@ -13,7 +9,7 @@ router.post("/", (req, res) => {
     const password = process.env.password;
     const apps = req.body.apps as YApp[];
     apps.forEach(app => {
-        exec(`ssh ${user}@${host} "echo ${password} | sudo -S yunohost app install ${app}"`, (err : string, output: string) => {
+        exec(`ssh ${user}@${host} "echo ${password} | sudo -S yunohost app install ${app}" --args "domain=domain.tld&path=/path&init_main_permission=visitors"`, (err : string, output: string) => {
             // once the command has completed, the callback function is called
             if (err) {
                 // log and return if we encounter an error
@@ -25,7 +21,5 @@ router.post("/", (req, res) => {
             res.send({});
         })
     });
-    
 });
-
 module.exports = router

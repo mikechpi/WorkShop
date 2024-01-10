@@ -6,7 +6,7 @@ const router = express.Router();
 const cheerio = require("cheerio");
 const axios = require("axios");
 
-const url = "https://apps.yunohost.org/app/rustdesk-server"
+// const url = "https://apps.yunohost.org/app/rustdesk-server"
 
 async function getAppInfo(url : string) {
     try {
@@ -28,10 +28,12 @@ async function getAppInfo(url : string) {
 }
 
 router.get("/", async (req, res) => {
-    const appName = req.query.appName;
+    const appName = req.query.appName as string;
     const url = await getUrlByAppName(appName);
-    const info = await getAppInfo(url);
-    return info;
+    // const info = await getAppInfo(url.url);
+    // console.log(url)
+    // console.log(info)
+    // res.send(info)
 });
 
 module.exports = router
