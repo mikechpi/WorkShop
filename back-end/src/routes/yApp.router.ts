@@ -1,10 +1,15 @@
 import express from "express"
-import { getAllApp } from "../provider/yApp.provider";
+import { getAllApp, getOneApp } from "../provider/yApp.provider";
 
 const router = express.Router();
 
-router.get("/", () => {
-    getAllApp()
+router.get("/", async (req, res) => {
+    const apps = await getAllApp()
+    res.json(apps);
 });
 
-export default router;
+router.get("/:name", async (req, res) => {
+    const apps = await getOneApp(req.params.name)
+    res.json(apps);
+});
+module.exports = router

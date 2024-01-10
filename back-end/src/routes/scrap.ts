@@ -1,5 +1,4 @@
 import express from "express"
-import prisma from "../service/prisma";
 import { getUrlByAppName } from "../provider/yApp.provider";
 
 const router = express.Router();
@@ -30,10 +29,8 @@ async function getAppInfo(url : string) {
 router.get("/", async (req, res) => {
     const appName = req.query.appName as string;
     const url = await getUrlByAppName(appName);
-    // const info = await getAppInfo(url.url);
-    // console.log(url)
-    // console.log(info)
-    // res.send(info)
+    const info = await getAppInfo(url);
+    res.send(info)
 });
 
 module.exports = router
