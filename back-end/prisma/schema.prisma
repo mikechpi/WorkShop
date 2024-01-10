@@ -12,16 +12,16 @@ datasource db {
 
 model bundle {
   id String @id @default(uuid())
-  name String
+  name String @unique
   yapps YApp[]
 }
 
 model YApp {
   id String @id @default(uuid())
-  name String
-  originalName String
+  name String @unique
+  originalName String @unique
   logoUrl String
   bundle bundle[]
   isInstalled Boolean
-  url String
+  url String @unique
 }
