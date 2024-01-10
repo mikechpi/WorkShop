@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { Info } from 'lucide-react'
+import { Checkbox } from "@/components/ui/checkbox"
 
 interface BundleAppsListProps {
   app: {
@@ -12,9 +13,9 @@ interface BundleAppsListProps {
 const BundleAppsList = ({app}: BundleAppsListProps) => {
   return (
     <div className="px-4 py-3 rounded-lg shadow transition-all border-slate-300 duration-300 hover:bg-gray-100">
-      <div className="flex justify-between gap-4">
+      <div className="flex justify-between gap-4 mb-2">
         <div className="shrink-0">
-          
+          <Checkbox id="terms" />
         </div>
         <div className='w-full'>
           <Info className="text-[#3B82F6] h-5 w-5 float-right cursor-pointer" size={24} />
