@@ -18,10 +18,9 @@ const ChooseApps = () => {
                   <BundleAppsInfos key={index} title={title} apps={apps} />
               )
           })
-
         }
         <div className="text-center my-6">
-          <Button className="bg-gradient-to-r from-[#FF3399] to-[#3B82F6] opacity-70 mt-4">Enregistrer vos modifications</Button>
+          <Button className="mt-4 bg-gradient-to-r from-[#FF3399] to-[#3B82F6] transition-opacity duration-500 opacity-70 hover:opacity-100">Enregistrer vos modifications</Button>
         </div>
     </SectionComponent>
   )
