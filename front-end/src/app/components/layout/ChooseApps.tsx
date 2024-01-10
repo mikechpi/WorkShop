@@ -2,6 +2,7 @@ import React from 'react'
 import SectionComponent from '../SectionComponent'
 import BundleAppsInfos from './BundleAppsInfos'
 import { BundleAppsData } from '@/app/constants/BundleAppsInfos'
+import { Button } from '@/components/ui/button'
 
 const ChooseApps = () => {
   return (
@@ -19,6 +20,9 @@ const ChooseApps = () => {
             })
 
         }
+        <div className="text-center my-6">
+          <Button className="bg-gradient-to-r from-[#FF3399] to-[#3B82F6] opacity-70 mt-4">Enregistrer vos modifications</Button>
+        </div>
     </SectionComponent>
   )
 }
