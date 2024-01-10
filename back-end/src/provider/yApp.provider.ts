@@ -1,76 +1,48 @@
 import fs from "fs"
 const appDataJson = require("../data/yApp.json")
 fs
+
+interface AppInterface {
+    name : string,
+    logoUrl : string,
+    categorie: string,
+};
+
+
 export const getAllApp = async () => {
-}
-
-export const getOneApp = async (id: string) => {
-   /*  try {
-        const yApp = await prisma.yApp.findUnique({
-            where:{
-                id
-            },
-            select: {
-                name: true,
-                logoUrl: true,
-                isInstalled: true
+    try {
+        const apps = appDataJson.yApps.map((item: AppInterface) => {return {
+                name: item.name,
+                logoUrl: item.logoUrl,
+                categorie: item.categorie,
             }
-        })
-
-        if(!yApp) {
-            throw new Error("There is no app matching id")
-        } else {
-            return yApp
-
-        }
+        });
+        return apps;
     } catch {
-        throw new Error("Internal server error")
-    } */
+        throw new Error()
+    }
 }
 
-export const changeInstalledStatusOfApp = async (id: string) => {
-    /* try {
-        const yApp = await prisma.yApp.findUnique({
-            where:{
-                id
+export const getOneApp = async (name: string) => {
+    try {
+        const apps = appDataJson.yApps.find((item: AppInterface) => {if (name == item.name) return {
+                name: item.name,
+                logoUrl: item.logoUrl,
+                categorie: item.categorie
             }
-        })
-
-        if(!yApp) {
-            throw new Error("There is no app matching id")
-        } else {
-            prisma.yApp.update({
-                where:{
-                    id
-                },
-                data:{
-                    isInstalled: yApp?.isInstalled!
-                }
-            })
-        }
-    } catch (error) {
-        throw new Error("Internal server error")
-    } */
+        });
+        console.log(apps)
+        return apps;
+    } catch {
+        throw new Error()
+    }
 }
 
 export const getUrlByAppName = (name: string) => {
-    /* prisma.yApp.findFirst({
-        where:{
-            name:{
-                contains: name,
-                mode: "insensitive"
-            }
-        })
-        if (!url) {
-            throw new Error("No URL found")
-        } else {
-            return url;
-        }
-    })
-        .then(url => {
-            return url
-        })
-        .catch(error => {
-            throw new Error(error)
-        }) */
+    try {
+        const url = appDataJson.yApps.find((element: any) => element.name === name)?.url;
+        return url
+    } catch {
+        throw new Error()
+    }
 }
