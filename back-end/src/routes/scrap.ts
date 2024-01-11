@@ -15,11 +15,15 @@ async function getAppInfo(url : string) {
         const image = $("main img").attr("src");
         const description = $("main .from-markdown").text();
         const version = $("main .text-slate-500").text();
+        const availability = $('main span i').attr('class');
+        const isAvailable = availability.includes("text-red-500") ? true : false;
+        //.length > 0 ? true : false
         return {
             name,
             image,
             description,
-            version
+            version,
+            isAvailable
         };
     } catch (error) {
         console.error(error);
