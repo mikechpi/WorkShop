@@ -3,7 +3,7 @@ import React from 'react'
 import SectionComponent from '../SectionComponent'
 import { BundleAppsData } from '@/app/constants/BundleAppsInfos'
 import { Button } from '@/components/ui/button'
-import BundleAppsDisplay from './bundleapps/BundleAppsDisplay'
+import BundleAppsDisplay from './BundleApps/BundleAppsDisplay'
 import getApps from '@/app/actions/getApps'
 
 const ChooseApps = () => {
