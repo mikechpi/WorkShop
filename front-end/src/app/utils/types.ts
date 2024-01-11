@@ -1,4 +1,3 @@
-
 export interface AppsInterface {
   name: string,
   originalName: string,
