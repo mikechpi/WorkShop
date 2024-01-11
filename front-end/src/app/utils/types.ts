@@ -1,6 +1,7 @@
 
 export interface AppsInterface {
   name: string,
+  originalName: string,
   logoUrl: string,
   categorie: string
 }

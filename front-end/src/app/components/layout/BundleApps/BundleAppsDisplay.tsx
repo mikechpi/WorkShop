@@ -4,7 +4,7 @@ import { AppsInterface } from '@/app/utils/types'
 
 interface BundleAppsDisplayProps {
   title: string,
-  apps: Promise<AppsInterface[]>
+  apps: AppsInterface[]
 }
 
 const BundleAppsDisplay = ({title, apps}: BundleAppsDisplayProps) => {

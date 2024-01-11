@@ -16,7 +16,7 @@ const ChooseApps = async () => {
         </div>
         {
           BundleAppsData.map((infos, index) => {
-              const { title, apps } = infos;
+              const { title } = infos;
               return (
                   <BundleAppsDisplay key={index} title={title} apps={ appsList } />
               )
