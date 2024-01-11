@@ -10,6 +10,6 @@ router.get("/", async (req, res) => {
 
 router.get("/:name", async (req, res) => {
     const apps = await getOneApp(req.params.name)
-    res.json(apps);
+    res.json(apps)  ;
 });
 module.exports = router
