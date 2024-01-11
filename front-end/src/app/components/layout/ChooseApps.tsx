@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button'
 import BundleAppsDisplay from './bundleapps/BundleAppsDisplay'
 import getAppsByGroup from '@/app/actions/getAppsByGroups'
 
-
 const ChooseApps = async () => {
 
   const postItApps = await getAppsByGroup('post-it');
