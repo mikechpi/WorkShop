@@ -16,6 +16,7 @@ const BundleAppsList = ({app}: BundleAppsListProps) => {
           <Checkbox id="terms" />
         </div>
         <div className='w-full'>
+          {/* @ts-expect-error Server Component */}
           <Modal name={app.name} />
         </div>
       </div>
