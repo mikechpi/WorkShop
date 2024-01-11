@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react'; // Ajoute les icônes hamburger et de fermeture
@@ -10,6 +10,7 @@ const Header = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
 
   return (
     <header className="relative top-0 left-0 right-0 bg-white px-4 py-2 md:p-4 lg:px-12 flex justify-between items-center shadow-lg"> {/* Styles de la barre */}
@@ -28,13 +29,13 @@ const Header = () => {
         </Link>
       </nav>
 
-      <div className="lg:hidden cursor-pointer" onClick={toggleMenu}> {/* Menu Mobile : hidden sur PC */}
+      <div className="md:hidden cursor-pointer" onClick={toggleMenu}> {/* Icône du Menu Mobile : hidden sur PC */}
         <Menu />
       </div>
       
       {/* Ajoute le menu déroulant avec fond flou et bouton de fermeture */}
       {isMenuOpen && (
-        <div className="fixed inset-0     backdrop-blur bg-gradient-to-b from-white bg-opacity-50 z-50     flex items-center justify-center">
+        <div className="md:hidden     fixed inset-0     backdrop-blur bg-gradient-to-b from-white bg-opacity-50 z-50     flex items-center justify-center"> {/* Menu Mobile : hidden sur PC */}
           
           <div className="absolute top-4 right-4">
             <X onClick={toggleMenu} size={28} color="#000" />
