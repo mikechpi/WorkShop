@@ -7,6 +7,7 @@ const app = Express();
 
 const PORT = process.env.PORT;
 
+app.use(Express.urlencoded({extended:true}))
 app.use(Express.json());
 
 
