@@ -9,6 +9,7 @@ interface BundleAppsDisplayProps {
 
 const BundleAppsDisplay = ({title, appsList}: BundleAppsDisplayProps) => {
   let apps = appsList;
+
   return (
     <div className='flex flex-col mt-8 justify-center items-center'>
         <h3 className='lg:text-2xl text-gray-800 font-bold'>{title}</h3>
