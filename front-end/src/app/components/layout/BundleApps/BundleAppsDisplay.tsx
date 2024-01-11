@@ -1,12 +1,10 @@
 import React from 'react'
 import BundleAppsList from './BundleAppsList'
+import { AppsInterface } from '@/app/utils/types'
 
 interface BundleAppsDisplayProps {
   title: string,
-  apps: {
-     name: string,
-     image: string,
-  }[],
+  apps: Promise<AppsInterface[]>
 }
 
 const BundleAppsDisplay = ({title, apps}: BundleAppsDisplayProps) => {

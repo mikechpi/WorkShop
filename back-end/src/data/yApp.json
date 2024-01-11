@@ -5,56 +5,82 @@
       "originalName": "tyto",
       "logoUrl": "https://app.yunohost.org/default/v3/logos/be4d39bfec41259cbafce81c28c7e9c1362018bfcb46dfac444f0eb96c72e892.png",
       "url": "https://apps.yunohost.org/app/tyto",
-      "categorie": "productivity & management"
+      "categorie": "productivity & management",
+      "groups": [
+        "post-it"
+      ]
     },
     {
       "name": "Overleaf",
       "originalName": "overleaf",
       "logoUrl": "https://app.yunohost.org/default/v3/logos/edce4a8882c0ae6171d64f28565140dfaa38b74203f67289e18a0755f8444df7.png",
       "url": "https://apps.yunohost.org/app/hedgedoc",
-      "categorie": "office"
+      "categorie": "office",
+      "groups": [
+        "co-écriture"
+      ]
     },
     {
       "name": "Libreto",
       "originalName": "libreto",
       "logoUrl": "https://app.yunohost.org/default/v3/logos/08e31f6bf5ccd5ee16be639075ab5e05a1a9f45e6f4c26112639b6c5e561c8ea.png",
       "url": "https://apps.yunohost.org/app/libreto",
-      "categorie": "publishing"
+      "categorie": "publishing",
+      "groups": [
+        "co-écriture"
+      ]
     },
     {
       "name": "Hedgedoc",
       "originalName": "hedgedoc",
       "logoUrl": "https://app.yunohost.org/default/v3/logos/edce4a8882c0ae6171d64f28565140dfaa38b74203f67289e18a0755f8444df7.png",
       "url": "https://apps.yunohost.org/app/hedgedoc",
-      "categorie": "office"
+      "categorie": "office",
+      "groups": [
+        "co-écriture"
+      ]
     },
     {
       "name": "Etherpad",
       "originalName": "etherpad",
       "logoUrl": "https://app.yunohost.org/default/v3/logos/ce619748d4d0f5c6e39727ed2693c1d676e50ea897ab13e00f651dab300a1dc3.png",
       "url": "https://apps.yunohost.org/app/etherpad",
-      "categorie": "office"
+      "categorie": "office",
+      "groups": [
+        "co-écriture"
+      ]
     },
     {
       "name": "Scrumblr",
       "originalName": "scrumblr",
       "logoUrl": "https://app.yunohost.org/default/v3/logos/dedf3b6360c9a9fa95b66de67d55459ba979e9cdc523343a6af9af384980ebac.png",
       "url": "https://apps.yunohost.org/app/scrumblr",
-      "categorie": "small utilities"
+      "categorie": "small utilities",
+      "groups": [
+        "post-it"
+      ]
     },
     {
       "name": "Calibre-web",
       "originalName": "calibre-web",
       "logoUrl": "https://app.yunohost.org/default/v3/logos/dbaa0699e4c2817dafab3c884bfc273bc8b75fd8c11fb8f40828173aa8015181.png",
       "url": "https://apps.yunohost.org/app/calibreweb",
-      "categorie": "reading"
+      "categorie": "reading",
+      "groups": [
+        "post-it",
+        "biblio"
+      ]
     },
     {
       "name": "YesWiki",
       "originalName": "yeswiki",
       "logoUrl": "https://app.yunohost.org/default/v3/logos/f08c90c8ff38d53a71e100595b62ccd9d436fddbedba8e201fb2cfc7b282a10b.png",
       "url": "https://apps.yunohost.org/app/yeswiki",
-      "categorie": "publishing"
+      "categorie": "publishing",
+      "groups": [
+        "post-it",
+        "co-écriture"
+      ]
     }
   ]
 }

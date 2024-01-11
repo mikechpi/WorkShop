@@ -5,6 +5,7 @@ interface AppInterface {
     name : string,
     logoUrl : string,
     categorie: string,
+    groups: string[]
 };
 
 
@@ -14,6 +15,7 @@ export const getAllApp = async () => {
                 name: item.name,
                 logoUrl: item.logoUrl,
                 categorie: item.categorie,
+                groups: item.groups
             }
         });
         return apps;
@@ -29,7 +31,8 @@ export const getOneApp = async (name: string) => {
         return {
             name: app.name,
             logoUrl: app.logoUrl,
-            categorie: app.categorie
+            categorie: app.categorie,
+            groups: app.groups
        }
     } catch {
         throw new Error()
