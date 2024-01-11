@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains:[
-            "app.yunohost.org"
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: "app.yunohost.org",
+                pathname: "/**"
+            }
         ]
     }
 }

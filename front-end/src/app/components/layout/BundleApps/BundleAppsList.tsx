@@ -16,7 +16,7 @@ const BundleAppsList = ({app}: BundleAppsListProps) => {
           <Checkbox id="terms" />
         </div>
         <div className='w-full'>
-          <Modal />
+          <Modal name={app.name} />
         </div>
       </div>
       <div className="flex justify-between gap-4">
