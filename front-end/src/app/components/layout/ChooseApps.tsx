@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import SectionComponent from '../SectionComponent'
 import { BundleAppsData } from '@/app/utils/constants/BundleAppsInfos'
 import { Button } from '@/components/ui/button'
-import BundleAppsDisplay from './BundleApps/BundleAppsDisplay'
+import BundleAppsDisplay from './bundleapps/BundleAppsDisplay'
 import getApps from '@/app/actions/getApps'
 
 
