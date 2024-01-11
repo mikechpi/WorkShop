@@ -62,7 +62,7 @@
     },
     {
       "name": "Calibre-web",
-      "originalName": "calibre-web",
+      "originalName": "calibreweb",
       "logoUrl": "https://app.yunohost.org/default/v3/logos/dbaa0699e4c2817dafab3c884bfc273bc8b75fd8c11fb8f40828173aa8015181.png",
       "url": "https://apps.yunohost.org/app/calibreweb",
       "categorie": "reading",
