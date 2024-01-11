@@ -1,7 +1,7 @@
 import SectionComponent from '../SectionComponent'
 import { Button } from '@/components/ui/button'
-import BundleAppsDisplay from './bundleapps/BundleAppsDisplay'
 import getAppsByGroup from '@/app/actions/getAppsByGroups'
+import BundleAppsDisplay from './BundleApps/BundleAppsDisplay';
 
 const ChooseApps = async () => {
 

@@ -1,14 +1,16 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useContext } from 'react'
 import { Checkbox } from "@/components/ui/checkbox"
-import Modal from '../modal/Modal'
 import { AppsInterface } from '@/app/utils/types'
+import { AppsNameContext } from '../Context'
+import Modal from '../modal/Modal'
 
 interface BundleAppsListProps {
   app: AppsInterface
 }
 
 const BundleAppsList = ({app}: BundleAppsListProps) => {
+  const appsContext = useContext(AppsNameContext)
   return (
     <div className="px-4 py-3 rounded-lg shadow transition-all border-slate-300 duration-300 hover:bg-gray-100">
       <div className="flex justify-between gap-4 mb-2">
