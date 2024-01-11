@@ -1,8 +1,7 @@
-import { AppInitialProps } from "next/app"
+import { AppDetailsInterface } from "../utils/types"
 
 export default  async function getAppDetails(name: string) {
     const res = await fetch(`http://localhost:8000/scrap?appName=${name}`)
-    const appDetail: AppInitialProps = await res.json()
-
+    const appDetail: AppDetailsInterface = await res.json()
     return appDetail
 }

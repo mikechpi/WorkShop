@@ -1,29 +1,13 @@
-"use client";
 import React, { useEffect, useState } from 'react'
 import SectionComponent from '../SectionComponent'
 import { BundleAppsData } from '@/app/utils/constants/BundleAppsInfos'
 import { Button } from '@/components/ui/button'
 import BundleAppsDisplay from './BundleApps/BundleAppsDisplay'
 import getApps from '@/app/actions/getApps'
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
-import { AppType } from 'next/app';
-import { AppsInterface } from '@/app/utils/types';
 
 
-const ChooseApps = () => {
-  const [appsList, setAppsList] = useState<AppsInterface[]>([])
-
-  useEffect(() => {
-    getApps()
-      .then(response => {
-        return response
-      })
-      .then(data => {
-        console.log(data)
-        setAppsList(data as AppsInterface[])
-      })
-  }, [])
-
+const ChooseApps = async () => {
+  const appsList = await getApps()
   return (
     <SectionComponent>
         <div className='flex flex-col space-y-4 justify-center items-center'>
