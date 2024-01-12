@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
 import Header from './components/layout/Header'
+import AppsNameProvider from './components/layout/Context'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -20,10 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
-        <Header />
-        {children}
-      </body>
-    </html>
+        <AppsNameProvider>
+          <body className={montserrat.className}>
+            <Header />
+            {children}
+          </body>
+        </AppsNameProvider>
+      </html>
   )
 }
