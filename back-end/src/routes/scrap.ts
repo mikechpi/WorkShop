@@ -5,8 +5,6 @@ const router = express.Router();
 const cheerio = require("cheerio");
 const axios = require("axios");
 
-// const url = "https://apps.yunohost.org/app/rustdesk-server"
-
 async function getAppInfo(url : string) {
     try {
         const response = await axios.get(url);
@@ -16,8 +14,7 @@ async function getAppInfo(url : string) {
         const description = $("main .from-markdown").text();
         const version = $("main .text-slate-500").text();
         const availability = $('main span i').attr('class');
-        const isAvailable = availability.includes("text-red-500") ? true : false;
-        //.length > 0 ? true : false
+        const isAvailable = availability.includes("text-red-500") ? false : true;
         return {
             name,
             image,

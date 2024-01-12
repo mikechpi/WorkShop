@@ -14,7 +14,7 @@
       "name": "Overleaf",
       "originalName": "overleaf",
       "logoUrl": "https://app.yunohost.org/default/v3/logos/edce4a8882c0ae6171d64f28565140dfaa38b74203f67289e18a0755f8444df7.png",
-      "url": "https://apps.yunohost.org/app/hedgedoc",
+      "url": "https://apps.yunohost.org/app/overleaf",
       "categorie": "office",
       "groups": [
         "co-écriture"

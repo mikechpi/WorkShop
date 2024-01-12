@@ -1,6 +1,5 @@
 import Express from "express";
 import dotenv from "dotenv";
-const http = require('http');
 const socketio = require('socket.io');
 
 dotenv.config();

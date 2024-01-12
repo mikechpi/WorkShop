@@ -1,6 +1,5 @@
 const appDataJson = require("../data/yApp.json")
 
-
 interface AppInterface {
     name : string,
     logoUrl : string,
@@ -43,6 +42,15 @@ export const getUrlByAppName = (name: string) => {
     try {
         const url = appDataJson.yApps.find((element: any) => element.name === name)?.url;
         return url
+    } catch {
+        throw new Error()
+    }
+}
+
+export const getNameByAppName = (originalName: string) => {
+    try {
+        const name = appDataJson.yApps.find((element: any) => element.originalName === originalName)?.name;
+        return name;
     } catch {
         throw new Error()
     }
