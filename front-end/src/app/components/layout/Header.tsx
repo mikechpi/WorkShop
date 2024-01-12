@@ -51,7 +51,7 @@ const Header = () => {
       {/* Menu PC : hidden sur Mobile */}
       <nav className="hidden md:flex items-center space-x-8">
         {/* Liens vers différentes pages */}
-        <Link href="https://md.yeswiki.net/s/3zWb4SQR8" target="_blank" rel="noopener noreferrer" className="cursor-pointer font-semibold text-blue-500 hover:text-pink-500 transition duration-700 ease-in-out">
+        <Link href="/" rel="noopener noreferrer" className="cursor-pointer font-semibold text-blue-500 hover:text-pink-500 transition duration-700 ease-in-out">
           Bundles
         </Link>
         <Link href="/applications" rel="noopener noreferrer" className="cursor-pointer font-semibold text-blue-500 hover:text-pink-500 transition duration-700 ease-in-out">
@@ -77,14 +77,11 @@ const Header = () => {
 
           {/* Liens du menu mobile */}
           <nav className="flex flex-col items-center space-y-4 mt-20 text-white">
-            <Link href="https://md.yeswiki.net/s/3zWb4SQR8" target="_blank" rel="noopener noreferrer" className="cursor-pointer font-semibold text-3xl text-blue-500 hover:text-pink-500 transition duration-700 ease-in-out">
+            <Link href="/" rel="noopener noreferrer" className="cursor-pointer font-semibold text-3xl text-blue-500 hover:text-pink-500 transition duration-700 ease-in-out">
               Bundles
             </Link>
-            <Link href="https://apps.yunohost.org/catalog" target="_blank" rel="noopener noreferrer" className="cursor-pointer font-semibold text-3xl text-blue-500 hover:text-pink-500 transition duration-700 ease-in-out">
+            <Link href="/applications" rel="noopener noreferrer" className="cursor-pointer font-semibold text-3xl text-blue-500 hover:text-pink-500 transition duration-700 ease-in-out">
               Applications
-            </Link>
-            <Link href="https://yunohost.org/fr/troubleshooting" target="_blank" rel="noopener noreferrer" className="cursor-pointer font-semibold text-3xl text-blue-500 hover:text-pink-500 transition duration-700 ease-in-out">
-              Diagnostic
             </Link>
           </nav>
 
