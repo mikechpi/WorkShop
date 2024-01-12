@@ -5,7 +5,6 @@ import AppsNameProvider from './utils/context'
 export default function Home() {
   return (
     <>
-      <Header />
       <AppsNameProvider>
         <ChooseApps/>
       </AppsNameProvider>
