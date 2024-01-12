@@ -2,7 +2,8 @@ export interface AppsInterface {
   name: string,
   originalName: string,
   logoUrl: string,
-  categorie: string
+  categorie: string,
+  groups: string[]
 }
 
 export interface AppDetailsInterface {
