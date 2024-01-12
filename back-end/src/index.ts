@@ -22,7 +22,7 @@ app.use(Express.urlencoded({extended:true}))
 app.use(Express.json());
 
 
-const yAppRouter = require("./routes/yApp");
+const yAppRouter = require("./routes/yApp.router");
 const scrapRouter = require("./routes/scrap");
 const installRouter = require("./routes/install");
 
