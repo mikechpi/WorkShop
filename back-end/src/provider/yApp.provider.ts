@@ -55,3 +55,12 @@ export const getNameByAppName = (originalName: string) => {
         throw new Error()
     }
 }
+
+export const checkIfAppExist = (originalName: string) => {
+    try {
+        const appExist = appDataJson.yApps.find((element: any) => element.originalName === originalName);
+        return appExist;
+    } catch {
+        throw new Error()
+    }
+}
