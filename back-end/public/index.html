@@ -2,58 +2,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progress Bar Demo</title>
-  <style>
-    #progress-bar {
-      width: 100%;
-      height: 30px;
-      background-color: #f1f1f1;
-      margin-top: 20px;
-    }
-
-    #progress-bar-inner {
-      height: 100%;
-      width: 0;
-      background-color: #4caf50;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar Demo</title>
+    <style>
+        #progress-bar {
+            width: 100%;
+            height: 30px;
+            background-color: #f1f1f1;
+            margin-top: 20px;
+        }
+        #progress-bar-inner {
+            height: 100%;
+            width: 0;
+            background-color: #4caf50;
+        }
+    </style>
 </head>
 <body>
-  
+    <script src="/socket.io/socket.io.js"></script>
+    <div id="progress-bar">
+        <div id="progress-bar-inner"></div>
+    </div>
+    <div id="progress-display" style="font: 1em sans-serif;"></div>
 
-  <script src="/socket.io/socket.io.js"></script>
-  <div id="progress-bar">
-    <div id="progress-bar-inner"></div>
-  </div>
-  <div id="progress-display">Log : <br></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const progressDisplay = document.getElementById('progress-display');
+        const progressBar = document.getElementById('progress-bar-inner');
+        let overallProgress = 0;
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
-  <script>
-    const socket = io();
-    const progressDisplay = document.getElementById('progress-display');
-    const progressBar = document.getElementById('progress-bar-inner');
-    // Counter to track overall progress
-    let overallProgress = 0;
+        socket.on('progress', (data) => {
+            progressDisplay.innerHTML += `<p>${data}</p>`;
+            progressDisplay.scrollTop = progressDisplay.scrollHeight;
+            overallProgress += 5;
+            if (data.includes("Installation completed") || data.includes("uninstalled")) { overallProgress = 5 }
 
-    socket.on('progress', (data) => {
-      // Append the streaming data to the content of the div
-      progressDisplay.innerHTML += `<p>${data}</p>`;
-
-      // Optionally, you can scroll to the bottom to always show the latest data
-      progressDisplay.scrollTop = progressDisplay.scrollHeight;
-    //   const progressPercentage = parseProgressPercentage(concatenatedData);
-      
-    // Increment the overall progress by 10% (adjust as needed)
-    overallProgress += 10;
-
-    // Update the progress bar width
-    progressBar.style.width = `${overallProgress}%`;
-
-   
-    });
-  </script>
+            progressBar.style.width = `${overallProgress}%`;
+        });
+        socket.on('install', () => {
+            progressDisplay.innerHTML += `<p>Application(s) installation completed!</p>`;
+            progressDisplay.scrollTop = progressDisplay.scrollHeight;
+            progressBar.style.width = '100%';
+        });
+        socket.on('uninstall', () => {
+            progressDisplay.innerHTML += `<p>Application(s) uninstallation completed!</p>`;
+            progressDisplay.scrollTop = progressDisplay.scrollHeight;
+            progressBar.style.width = '100%';
+        });
+        function removeNonAlphanumeric(inputString) {
+            return inputString.replace(/[^a-zA-Z0-9. ]/g, '');
+        };
+    </script>
 </body>
 </html>
