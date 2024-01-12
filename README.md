@@ -35,7 +35,7 @@ bun dev
 Ouvrez http://localhost:3000 dans votre navigateur pour voir le résultat.
 
 ## Back-End 
-Retrouvez toute la documentation du back-end [ici] (https://github.com/mikechpi/WorkShop/tree/main/back-end)
+Retrouvez toute la documentation du back-end [ici] [https://github.com/mikechpi/WorkShop/tree/main/back-end]
 
 
 # Licence
