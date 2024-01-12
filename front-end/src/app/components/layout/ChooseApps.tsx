@@ -1,7 +1,8 @@
 import SectionComponent from '../SectionComponent'
 import { Button } from '@/components/ui/button'
 import getAppsByGroup from '@/app/actions/getAppsByGroups'
-import BundleAppsDisplay from './BundleApps/BundleAppsDisplay';
+import BundleAppsDisplay from './bundleapps/BundleAppsDisplay';
+import Link from 'next/link';
 
 const ChooseApps = async () => {
 
@@ -19,7 +20,9 @@ const ChooseApps = async () => {
         <BundleAppsDisplay title="Co-écriture" appsList={ coEcritureApps } />
         <BundleAppsDisplay title="Bibliothèque" appsList={ biblioApps } />
         <div className="text-center my-6">
-          <Button className ="mt-4 bg-gradient-to-r from-[#FF3399] to-[#3B82F6] transition-opacity duration-500 opacity-70 hover:opacity-100">Enregistrer vos choix</Button>
+          <Button asChild className ="mt-4 bg-gradient-to-r from-[#FF3399] to-[#3B82F6] transition-opacity duration-500 opacity-70 hover:opacity-100">
+            <Link href="/applications">Installer</Link>
+          </Button>
         </div>
     </SectionComponent>
   )
