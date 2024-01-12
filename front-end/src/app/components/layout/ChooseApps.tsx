@@ -32,6 +32,9 @@ const ChooseApps = () => {
         <div className="text-center my-6">
           <Button onClick={
             () => {
+              const result = {
+                apps: appsName.map(appName => { return {originalName: appName} } )
+              }
               fetch("http://localhost:8000/install", {method:"post", headers:{"Content-Type":"Application/json"}, body: JSON.stringify({apps: appsName})})
             }
           } className ="mt-4 bg-gradient-to-r from-[#FF3399] to-[#3B82F6] transition-opacity duration-500 opacity-70 hover:opacity-100">Enregistrer vos choix</Button>
