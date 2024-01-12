@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Checkbox } from "@/components/ui/checkbox"
 import { AppsInterface } from '@/app/utils/types'
 
@@ -13,22 +13,23 @@ interface BundleAppsListProps {
 }
 
 const BundleAppsList = ({app}: BundleAppsListProps) => {
-
-
-  const appsContext = useContext(AppsNameContext)
+  const {addAppName, appsName, removeAppName} = useContext(AppsNameContext)
 
   const onChangeAppStatus = () => {
-
+    if(!appsName.includes(app.name)) {
+        addAppName(app.name)
+    } else {
+        removeAppName(app.name)
+    }
   }
-
+  
   return (
     <div className="px-4 py-3 rounded-lg shadow transition-all border-slate-300 duration-300 hover:bg-gray-100">
       <div className="flex justify-between gap-4 mb-2">
         <div className="shrink-0">
-          <Checkbox onChange={onChangeAppStatus} id="terms" />
+          <Checkbox onCheckedChange={onChangeAppStatus} id="terms" />
         </div>
         <div className='w-full'>
-          {/* @ts-expect-error Server Component */}
           <Modal name={app.name} />
         </div>
       </div>
